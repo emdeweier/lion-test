@@ -1,0 +1,1228 @@
+{
+	"info": {
+		"_postman_id": "8affed51-828a-493e-a47b-291dbf86542c",
+		"name": "MSBU Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Movie",
+			"item": [
+				{
+					"name": "Get Movie",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"search\": \"\",\r\n    \"pagination\": {\r\n        \"page\": 1,\r\n        \"size\": 10\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/movie/get-movie",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"movie",
+								"get-movie"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Movie",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"search\": \"\",\r\n    \"pagination\": {\r\n        \"page\": 1,\r\n        \"size\": 10\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/movie/get-movie",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"movie",
+										"get-movie"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 30 Nov 2024 07:01:21 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "346"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"success\",\n    \"data\": {\n        \"data\": [\n            {\n                \"id\": \"1QStbnBR\",\n                \"title\": \"Pengabdi Setan\",\n                \"description\": \"Setan\",\n                \"duration\": \"02:00:00\",\n                \"artists\": \"'Saya', 'Dia', 'Kamu'\",\n                \"genres\": \"'Horror'\"\n            },\n            {\n                \"id\": \"oYmegU54\",\n                \"title\": \"Doraemon\",\n                \"description\": \"Kucing\",\n                \"duration\": \"02:00:00\",\n                \"artists\": \"'Saya','Dia','Kamu'\",\n                \"genres\": \"'Child','Cartoon','Fiction'\"\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Most Viewed",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/movie/get-most-viewed",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"movie",
+								"get-most-viewed"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Most Viewed",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/movie/get-most-viewed",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"movie",
+										"get-most-viewed"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 30 Nov 2024 06:55:11 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "263"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"success\",\n    \"data\": {\n        \"data\": {\n            \"data\": {\n                \"id\": \"oYmegU54\",\n                \"title\": \"Doraemon\",\n                \"description\": \"Kucing\",\n                \"duration\": \"7200\",\n                \"artists\": \"'Saya','Dia','Kamu'\",\n                \"genres\": \"'Child','Cartoon','Fiction'\",\n                \"watch_url\": \"https://youtube.com\",\n                \"viewed\": 1,\n                \"voted\": 0\n            }\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Movie Detail",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"1QStbnBR\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/movie/get-movie-detail",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"movie",
+								"get-movie-detail"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Movie Detail",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": \"oYmegU54\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/movie/get-movie-detail",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"movie",
+										"get-movie-detail"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 30 Nov 2024 06:52:43 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "258"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"success\",\n    \"data\": {\n        \"data\": {\n            \"id\": \"oYmegU54\",\n            \"title\": \"Doraemon\",\n            \"description\": \"Kucing\",\n            \"duration\": \"02:00:00\",\n            \"artists\": \"'Saya','Dia','Kamu'\",\n            \"genres\": \"'Child','Cartoon','Fiction'\",\n            \"watch_url\": \"https://youtube.com\",\n            \"viewed\": 1,\n            \"voted\": 0\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Insert Movie",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Agak Laen\",\r\n    \"description\": \"Agak Laen\",\r\n    \"duration\": 7200,\r\n    \"artists\": \"'Saya', 'Dia', 'Kamu'\",\r\n    \"genres\": \"'Horror', 'Comedy'\",\r\n    \"watch_url\": \"https://youtube.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/movie/insert-movie",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"movie",
+								"insert-movie"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Insert Movie",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"Pengabdi Setan\",\r\n    \"description\": \"Setan\",\r\n    \"duration\": 7200,\r\n    \"artists\": \"'Saya', 'Dia', 'Kamu'\",\r\n    \"genres\": \"'Horror'\",\r\n    \"watch_url\": \"https://youtube.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/movie/insert-movie",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"movie",
+										"insert-movie"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 30 Nov 2024 07:01:05 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "52"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"success\",\n    \"data\": {\n        \"data\": 1\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Movie",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"1QStbnBR\",\r\n    \"title\": \"Pengabdi Setan\",\r\n    \"description\": \"Ihh Seremm\",\r\n    \"duration\": 7200,\r\n    \"artists\": \"'Saya','Dia','Kamu'\",\r\n    \"genres\": \"'Horror','Fiction'\",\r\n    \"watch_url\": \"https://youtube.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/movie/update-movie",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"movie",
+								"update-movie"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update Movie",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": \"1QStbnBR\",\r\n    \"title\": \"Pengabdi Setan\",\r\n    \"description\": \"Ihh Seremm\",\r\n    \"duration\": 7200,\r\n    \"artists\": \"'Saya','Dia','Kamu'\",\r\n    \"genres\": \"'Horror','Fiction'\",\r\n    \"watch_url\": \"https://youtube.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/movie/update-movie",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"movie",
+										"update-movie"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 30 Nov 2024 07:30:00 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "52"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"success\",\n    \"data\": {\n        \"data\": 1\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Genre",
+			"item": [
+				{
+					"name": "Get Genre",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"search\": \"m\",\r\n    \"pagination\": {\r\n        \"page\": 1,\r\n        \"size\": 10\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/genre/get-genre",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"genre",
+								"get-genre"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Genre",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"page\": 1,\r\n    \"size\": 10\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/genre/get-genre",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"genre",
+										"get-genre"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 30 Nov 2024 05:56:40 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "204"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"success\",\n    \"data\": {\n        \"data\": [\n            {\n                \"id\": 1,\n                \"genre\": \"Romantic\",\n                \"viewed\": 0\n            },\n            {\n                \"id\": 2,\n                \"genre\": \"Comedy\",\n                \"viewed\": 0\n            },\n            {\n                \"id\": 3,\n                \"genre\": \"Cartoon\",\n                \"viewed\": 0\n            },\n            {\n                \"id\": 4,\n                \"genre\": \"Fiction\",\n                \"viewed\": 0\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Most Viewed",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/genre/get-most-viewed",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"genre",
+								"get-most-viewed"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Most Viewed",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/genre/get-most-viewed",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"genre",
+										"get-most-viewed"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 30 Nov 2024 06:59:53 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "173"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"success\",\n    \"data\": {\n        \"data\": {\n            \"data\": [\n                {\n                    \"id\": 3,\n                    \"genre\": \"Cartoon\",\n                    \"viewed\": 1\n                },\n                {\n                    \"id\": 4,\n                    \"genre\": \"Fiction\",\n                    \"viewed\": 1\n                },\n                {\n                    \"id\": 5,\n                    \"genre\": \"Child\",\n                    \"viewed\": 1\n                }\n            ]\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Genre Detail",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"genre\": \"Horror\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/genre/get-genre-detail",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"genre",
+								"get-genre-detail"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Genre Detail",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"genre\": \"Cartoon\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/genre/get-genre-detail",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"genre",
+										"get-genre-detail"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 30 Nov 2024 06:54:28 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "88"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"success\",\n    \"data\": {\n        \"data\": {\n            \"id\": 3,\n            \"genre\": \"Cartoon\",\n            \"viewed\": 1\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Insert Genre",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"genre\": \"Horror\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/genre/insert-genre",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"genre",
+								"insert-genre"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Insert Genre",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"genre\": \"Fiction\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/genre/insert-genre",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"genre",
+										"insert-genre"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 30 Nov 2024 05:55:17 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "52"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"success\",\n    \"data\": {\n        \"data\": 1\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Insert User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"msbu_user\",\r\n    \"name\": \"MSBU User\",\r\n    \"password\": \"M5bu_us3r\",\r\n    \"address\": \"Jakarta\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/user/insert-user",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"insert-user"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Insert User",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"msbu_user\",\r\n    \"name\": \"MSBU User\",\r\n    \"password\": \"M5bu_us3r\",\r\n    \"address\": \"Jakarta\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/user/insert-user",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"user",
+										"insert-user"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 30 Nov 2024 07:37:54 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "52"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"success\",\n    \"data\": {\n        \"data\": 1\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Generate Admin",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"msbu_test\",\r\n    \"name\": \"MSBU Test\",\r\n    \"password\": \"msbu_test123\",\r\n    \"address\": \"Jakarta\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/user/generate-admin",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"generate-admin"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Generate Admin",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"msbu_test\",\r\n    \"name\": \"MSBU Test\",\r\n    \"password\": \"msbu_test123\",\r\n    \"address\": \"Jakarta\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/user/generate-admin",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"user",
+										"generate-admin"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 29 Nov 2024 19:51:39 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "52"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"success\",\n    \"data\": {\n        \"data\": 1\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"msbu_test\",\r\n    \"password\": \"msbu_test123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"msbu_user\",\r\n    \"password\": \"M5bu_us3r\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/login",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 30 Nov 2024 07:38:09 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "208"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"success\",\n    \"data\": {\n        \"data\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MzI5NTU4ODksInJvbGUiOiJ1c2VyIiwidXNlcm5hbWUiOiJtc2J1X3VzZXIifQ.TdQjBoyi3PwAzSyirmbVMFwUVXIEBQUqZ7TpINGLG9A\"\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Vote",
+			"item": [
+				{
+					"name": "Vote",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"movie_id\": \"1QStbnBR\",\r\n    \"user_username\": \"msbu_user\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/vote/vote",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"vote",
+								"vote"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Vote",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"movie_id\": \"1QStbnBR\",\r\n    \"user_username\": \"msbu_user\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/vote/vote",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"vote",
+										"vote"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 30 Nov 2024 13:24:43 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "52"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"success\",\n    \"data\": {\n        \"data\": 1\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Check Vote",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"movie_id\": \"1QStbnBR\",\r\n    \"user_username\": \"msbu_user\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/vote/check-vote",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"vote",
+								"check-vote"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Check Vote",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"movie_id\": \"1QStbnBR\",\r\n    \"user_username\": \"msbu_user\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/vote/check-vote",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"vote",
+										"check-vote"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 30 Nov 2024 15:31:14 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "56"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"success\",\n    \"data\": {\n        \"data\": false\n    }\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "token",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3Mjk3MDYyMjAsInJvbGUiOiJ1c2VyIiwidXNlcm5hbWUiOiJiYXBha255YWpvbm8ifQ.8r9DjYpBePlZLzfpYaiAyS8TPcmp6e6FtsKghlzCGzc"
+		},
+		{
+			"key": "url",
+			"value": "http://localhost:1804"
+		}
+	]
+}
